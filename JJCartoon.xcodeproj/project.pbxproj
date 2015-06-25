@@ -12,6 +12,14 @@
 		3453AB5E1B3B9A2F0049C184 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3453AB5D1B3B9A2F0049C184 /* Images.xcassets */; };
 		3453AB611B3B9A2F0049C184 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3453AB5F1B3B9A2F0049C184 /* LaunchScreen.xib */; };
 		3453AB6D1B3B9A2F0049C184 /* JJCartoonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3453AB6C1B3B9A2F0049C184 /* JJCartoonTests.m */; };
+		3453ABA51B3BA2A90049C184 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3453ABA31B3BA2A90049C184 /* FirstViewController.m */; };
+		3453ABA61B3BA2A90049C184 /* FirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3453ABA41B3BA2A90049C184 /* FirstViewController.xib */; };
+		3453ABAA1B3BA2BE0049C184 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3453ABA81B3BA2BE0049C184 /* SecondViewController.m */; };
+		3453ABAB1B3BA2BE0049C184 /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3453ABA91B3BA2BE0049C184 /* SecondViewController.xib */; };
+		3453ABAF1B3BA2D30049C184 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3453ABAD1B3BA2D30049C184 /* ThirdViewController.m */; };
+		3453ABB01B3BA2D30049C184 /* ThirdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3453ABAE1B3BA2D30049C184 /* ThirdViewController.xib */; };
+		3453ABB91B3BAA7D0049C184 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3453ABB71B3BAA7D0049C184 /* RootViewController.m */; };
+		3453ABBA1B3BAA7D0049C184 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3453ABB81B3BAA7D0049C184 /* RootViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +43,18 @@
 		3453AB661B3B9A2F0049C184 /* JJCartoonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JJCartoonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3453AB6B1B3B9A2F0049C184 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3453AB6C1B3B9A2F0049C184 /* JJCartoonTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JJCartoonTests.m; sourceTree = "<group>"; };
+		3453ABA21B3BA2A90049C184 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		3453ABA31B3BA2A90049C184 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		3453ABA41B3BA2A90049C184 /* FirstViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FirstViewController.xib; sourceTree = "<group>"; };
+		3453ABA71B3BA2BE0049C184 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		3453ABA81B3BA2BE0049C184 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		3453ABA91B3BA2BE0049C184 /* SecondViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondViewController.xib; sourceTree = "<group>"; };
+		3453ABAC1B3BA2D30049C184 /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
+		3453ABAD1B3BA2D30049C184 /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
+		3453ABAE1B3BA2D30049C184 /* ThirdViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThirdViewController.xib; sourceTree = "<group>"; };
+		3453ABB61B3BAA7D0049C184 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		3453ABB71B3BAA7D0049C184 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		3453ABB81B3BAA7D0049C184 /* RootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,8 +96,17 @@
 		3453AB551B3B9A2F0049C184 /* JJCartoon */ = {
 			isa = PBXGroup;
 			children = (
-				3453AB5A1B3B9A2F0049C184 /* AppDelegate.h */,
-				3453AB5B1B3B9A2F0049C184 /* AppDelegate.m */,
+				3453AB7D1B3B9AD50049C184 /* Sections */,
+				3453AB771B3B9A920049C184 /* AppDelegate */,
+				3453AB841B3B9B330049C184 /* Vendors */,
+				3453AB831B3B9B1D0049C184 /* Userinterface */,
+				3453AB821B3B9B190049C184 /* Supporting Files */,
+				3453AB811B3B9AE20049C184 /* helpers */,
+				3453AB801B3B9ADE0049C184 /* Macro */,
+				3453AB7F1B3B9ADC0049C184 /* Moderls */,
+				3453AB7E1B3B9AD80049C184 /* Recrources */,
+				3453AB7C1B3B9AD20049C184 /* New Group */,
+				3453AB761B3B9A6A0049C184 /* General */,
 				3453AB5D1B3B9A2F0049C184 /* Images.xcassets */,
 				3453AB5F1B3B9A2F0049C184 /* LaunchScreen.xib */,
 				3453AB561B3B9A2F0049C184 /* Supporting Files */,
@@ -109,6 +138,225 @@
 				3453AB6B1B3B9A2F0049C184 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3453AB761B3B9A6A0049C184 /* General */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = General;
+			sourceTree = "<group>";
+		};
+		3453AB771B3B9A920049C184 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				3453AB5A1B3B9A2F0049C184 /* AppDelegate.h */,
+				3453AB5B1B3B9A2F0049C184 /* AppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		3453AB7C1B3B9AD20049C184 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "New Group";
+			sourceTree = "<group>";
+		};
+		3453AB7D1B3B9AD50049C184 /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				3453AB911B3B9D380049C184 /* RootVC */,
+				3453AB871B3B9BDA0049C184 /* KuaiKanVC */,
+				3453AB861B3B9BD50049C184 /* FindVC */,
+				3453AB851B3B9BD10049C184 /* PersonalVC */,
+			);
+			name = Sections;
+			sourceTree = "<group>";
+		};
+		3453AB7E1B3B9AD80049C184 /* Recrources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Recrources;
+			sourceTree = "<group>";
+		};
+		3453AB7F1B3B9ADC0049C184 /* Moderls */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Moderls;
+			sourceTree = "<group>";
+		};
+		3453AB801B3B9ADE0049C184 /* Macro */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Macro;
+			sourceTree = "<group>";
+		};
+		3453AB811B3B9AE20049C184 /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = helpers;
+			sourceTree = "<group>";
+		};
+		3453AB821B3B9B190049C184 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3453AB831B3B9B1D0049C184 /* Userinterface */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Userinterface;
+			sourceTree = "<group>";
+		};
+		3453AB841B3B9B330049C184 /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Vendors;
+			sourceTree = "<group>";
+		};
+		3453AB851B3B9BD10049C184 /* PersonalVC */ = {
+			isa = PBXGroup;
+			children = (
+				3453AB901B3B9CC90049C184 /* Model */,
+				3453AB8F1B3B9CC70049C184 /* View */,
+				3453AB8E1B3B9CC40049C184 /* ViewController */,
+			);
+			name = PersonalVC;
+			sourceTree = "<group>";
+		};
+		3453AB861B3B9BD50049C184 /* FindVC */ = {
+			isa = PBXGroup;
+			children = (
+				3453AB8D1B3B9CBF0049C184 /* Model */,
+				3453AB8C1B3B9CBC0049C184 /* View */,
+				3453AB8B1B3B9CB90049C184 /* ViewController */,
+			);
+			name = FindVC;
+			sourceTree = "<group>";
+		};
+		3453AB871B3B9BDA0049C184 /* KuaiKanVC */ = {
+			isa = PBXGroup;
+			children = (
+				3453AB8A1B3B9C7C0049C184 /* Model */,
+				3453AB891B3B9C790049C184 /* View */,
+				3453AB881B3B9C740049C184 /* ViewController */,
+			);
+			name = KuaiKanVC;
+			sourceTree = "<group>";
+		};
+		3453AB881B3B9C740049C184 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3453ABA21B3BA2A90049C184 /* FirstViewController.h */,
+				3453ABA31B3BA2A90049C184 /* FirstViewController.m */,
+				3453ABA41B3BA2A90049C184 /* FirstViewController.xib */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		3453AB891B3B9C790049C184 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		3453AB8A1B3B9C7C0049C184 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		3453AB8B1B3B9CB90049C184 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3453ABA71B3BA2BE0049C184 /* SecondViewController.h */,
+				3453ABA81B3BA2BE0049C184 /* SecondViewController.m */,
+				3453ABA91B3BA2BE0049C184 /* SecondViewController.xib */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		3453AB8C1B3B9CBC0049C184 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		3453AB8D1B3B9CBF0049C184 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		3453AB8E1B3B9CC40049C184 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3453ABAC1B3BA2D30049C184 /* ThirdViewController.h */,
+				3453ABAD1B3BA2D30049C184 /* ThirdViewController.m */,
+				3453ABAE1B3BA2D30049C184 /* ThirdViewController.xib */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		3453AB8F1B3B9CC70049C184 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		3453AB901B3B9CC90049C184 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		3453AB911B3B9D380049C184 /* RootVC */ = {
+			isa = PBXGroup;
+			children = (
+				3453AB941B3B9D470049C184 /* Model */,
+				3453AB931B3B9D450049C184 /* View */,
+				3453AB921B3B9D430049C184 /* ViewController */,
+			);
+			name = RootVC;
+			sourceTree = "<group>";
+		};
+		3453AB921B3B9D430049C184 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3453ABB61B3BAA7D0049C184 /* RootViewController.h */,
+				3453ABB71B3BAA7D0049C184 /* RootViewController.m */,
+				3453ABB81B3BAA7D0049C184 /* RootViewController.xib */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		3453AB931B3B9D450049C184 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		3453AB941B3B9D470049C184 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +441,10 @@
 			files = (
 				3453AB611B3B9A2F0049C184 /* LaunchScreen.xib in Resources */,
 				3453AB5E1B3B9A2F0049C184 /* Images.xcassets in Resources */,
+				3453ABBA1B3BAA7D0049C184 /* RootViewController.xib in Resources */,
+				3453ABB01B3BA2D30049C184 /* ThirdViewController.xib in Resources */,
+				3453ABA61B3BA2A90049C184 /* FirstViewController.xib in Resources */,
+				3453ABAB1B3BA2BE0049C184 /* SecondViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,8 +462,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3453ABAA1B3BA2BE0049C184 /* SecondViewController.m in Sources */,
 				3453AB5C1B3B9A2F0049C184 /* AppDelegate.m in Sources */,
+				3453ABB91B3BAA7D0049C184 /* RootViewController.m in Sources */,
+				3453ABAF1B3BA2D30049C184 /* ThirdViewController.m in Sources */,
 				3453AB591B3B9A2F0049C184 /* main.m in Sources */,
+				3453ABA51B3BA2A90049C184 /* FirstViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,7 +585,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				INFOPLIST_FILE = JJCartoon/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -339,7 +597,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				INFOPLIST_FILE = JJCartoon/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -358,6 +618,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = JJCartoonTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JJCartoon.app/JJCartoon";
@@ -373,6 +634,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = JJCartoonTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JJCartoon.app/JJCartoon";
@@ -398,6 +660,7 @@
 				3453AB721B3B9A2F0049C184 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3453AB731B3B9A2F0049C184 /* Build configuration list for PBXNativeTarget "JJCartoonTests" */ = {
 			isa = XCConfigurationList;
@@ -406,6 +669,7 @@
 				3453AB751B3B9A2F0049C184 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
