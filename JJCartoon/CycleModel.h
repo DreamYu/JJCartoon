@@ -8,6 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+
+
 @interface CycleModel : NSObject
+
+@property (nonatomic, retain) NSString *pic;
+@property (nonatomic, retain) NSString *value;
+
+- (instancetype) cyecleModelWithDictionary:(NSDictionary *)dic;
 
 @end

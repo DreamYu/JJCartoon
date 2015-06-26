@@ -8,33 +8,90 @@
 
 #import "SecondViewController.h"
 #import "SDCycleScrollView.h"
-
+#import "NetworkEngine.h"
+#import "CycleModel.h"
 
 #define kCycleViewHeight 220 //cycleView的高度
-@interface SecondViewController ()
+// getDataFromUrl 的URL
+#define kCycleViewUrl @"http://api.kuaikanmanhua.com/v1/banners"
+#define kCollectionViewUrl @"http://api.kuaikanmanhua.com/v1/topic_lists/mixed"
 
+@interface SecondViewController ()<NetworkEngineDelegate>
+@property (nonatomic, retain) UITableView *tableView;
 
 @end
+
+
+
 
 @implementation SecondViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UIBarButtonItem *search = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(searchBarAction:)];
-    self.navigationItem.rightBarButtonItem = search;
-// 创建 SDCycleScrollView 需要的array
-    NSArray *cycleArr = [NSArray array];
-    UIImage *image1 = [UIImage imageNamed:@"11"];
-    UIImage *image2 = [UIImage imageNamed:@"12"];
-    cycleArr = @[image1, image2];
+    self.tableView = [[UITableView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    self.view = self.tableView;
+    [self.tableView release];
     
-    // 创建 SDCycleScrollView
-    SDCycleScrollView *cycleView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, self.navigationController.navigationBar.frame.size.height, self.view.frame.size.width, kCycleViewHeight) imagesGroup:cycleArr];
-    [self.view addSubview:cycleView];
+    UIBarButtonItem *search = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(searchBarAction:)];
+    
+    self.navigationItem.rightBarButtonItem = search;
+//    cycleView从URL获取数据
+    [self getDataFromUrl];
+  // tableview 中的 collectionView获取数据
+    [self getCollectionViewDataFromUrl];
     
     
     
     // Do any additional setup after loading the view from its nib.
+}
+#pragma mark - getCollectionViewDataFromUrl
+- (void) getCollectionViewDataFromUrl
+{
+    
+}
+
+
+#pragma mark - getDataFromUrl
+- (void) getDataFromUrl
+{
+    NetworkEngine *engine = [NetworkEngine netWorkEngineWithURL:[NSURL URLWithString:kCycleViewUrl] params:nil delegate:self];
+    [engine start];
+    
+}
+#pragma mark - 数据请求成功的代理方法
+- (void)netWorkDidFinishLoading:(NetworkEngine *)engine withInfo:(NSData *)data
+{
+
+    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+    NSDictionary *dataDic = dic[@"data"];
+    NSArray *banner_group = dataDic[@"banner_group"];
+  
+    // 把得到的数据存放到数组当中
+    for (NSDictionary *itemDic in banner_group) {
+        CycleModel *Model = [[CycleModel alloc]cyecleModelWithDictionary:itemDic];
+        [self.allModelArray addObject:Model];
+    }
+   
+    NSMutableArray *picUrls = [NSMutableArray array];
+    for (CycleModel *model in self.allModelArray) {
+        NSString *picUrl = model.pic;
+        NSURL *url = [NSURL URLWithString:picUrl];
+        [picUrls addObject:url];
+    }
+    
+    // 创建cycle 轮播
+    SDCycleScrollView *cycleView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, self.view.frame.size.width, kCycleViewHeight) imageURLsGroup:picUrls];
+    cycleView.autoScrollTimeInterval = 2.0;
+    [self.tableView addSubview:cycleView];
+
+}
+// 懒加载 allModel
+- (NSMutableArray *)allModelArray
+{
+    if (!_allModelArray) {
+        self.allModelArray = [NSMutableArray array];
+    }
+    return _allModelArray;
 }
 #pragma mark - searchBarAction
 - (void) searchBarAction:(UIBarButtonItem *)sender
@@ -47,6 +104,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)dealloc
+{
+    [_allModelArray release];
+    [_tableView release];
+    [super dealloc];
+}
 /*
 #pragma mark - Navigation
 
