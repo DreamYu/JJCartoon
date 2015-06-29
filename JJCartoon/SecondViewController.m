@@ -10,82 +10,204 @@
 #import "SDCycleScrollView.h"
 #import "NetworkEngine.h"
 #import "CycleModel.h"
+#import "FindItemCell.h"
+#import "FindItemCell2.h"
+#import "BigModel.h"
+#import "SecTopicsModel.h"
+#import "SecTopModel.h"
+#import "DetialController.h"
+
+
 
 #define kCycleViewHeight 220 //cycleView的高度
 // getDataFromUrl 的URL
 #define kCycleViewUrl @"http://api.kuaikanmanhua.com/v1/banners"
+// tableview 中的 collectionView获取数据
 #define kCollectionViewUrl @"http://api.kuaikanmanhua.com/v1/topic_lists/mixed"
 
-@interface SecondViewController ()<NetworkEngineDelegate>
+@interface SecondViewController ()<NetworkEngineDelegate, UITableViewDataSource, UITableViewDelegate, UICollectionViewDelegate, SDCycleScrollViewDelegate>
 @property (nonatomic, retain) UITableView *tableView;
+@property (nonatomic, retain) SDCycleScrollView *cycleView;
 
 @end
-
-
-
 
 @implementation SecondViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //cycleView从URL获取数据
+    [self getDataFromUrl];
+    // 搜索条
+    UIBarButtonItem *search = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(searchBarAction:)];
+    self.navigationItem.rightBarButtonItem = search;
+   
     self.tableView = [[UITableView alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.view = self.tableView;
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    
+      // 给tabelview添加预留空间
+    UIView * view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 375, kCycleViewHeight)];
+    view.backgroundColor = [UIColor cyanColor];
+    self.tableView.tableHeaderView = view;
+    
     [self.tableView release];
-    
-    UIBarButtonItem *search = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(searchBarAction:)];
-    
-    self.navigationItem.rightBarButtonItem = search;
-//    cycleView从URL获取数据
-    [self getDataFromUrl];
-  // tableview 中的 collectionView获取数据
-    [self getCollectionViewDataFromUrl];
-    
-    
     
     // Do any additional setup after loading the view from its nib.
 }
-#pragma mark - getCollectionViewDataFromUrl
-- (void) getCollectionViewDataFromUrl
+#pragma mark - UITableView Delegate
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSLog(@"%ld, %ld", (long)indexPath.section, (long)indexPath.row);
+
+}
+- (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.modelArr.count;
+}
+// 设置cell 的高度
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 200;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row == 1) {
+        NSString *findCell2ID = @"findCell2ID";
+        FindItemCell2 *cell = [tableView dequeueReusableCellWithIdentifier:findCell2ID];
+        if (nil == cell) {
+            cell = [[FindItemCell2 alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:findCell2ID];
+        }
+        SecTopicsModel *molde = [self.secModelArray objectAtIndex:0];
+        cell.titleLabel.text = @"热门单篇";
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.model = molde;
+        cell.collectionView.delegate = self;
+       
+       
+        return cell;
+    }  else {
+        NSString *findCellID = @"findCellID";
+        FindItemCell *cell = [tableView dequeueReusableCellWithIdentifier:findCellID];
+        if (nil == cell) {
+            cell = [[FindItemCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:findCellID];
+        }
+        BigModel *model = [self.modelArr objectAtIndex:indexPath.row];
+        cell.model = model;
+        // 主题title
+        cell.titleLabel.text = model.title;
+        // 选中cell的颜色
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        return cell;
+
+    }
+
+}
+#pragma mark - Collection Delegate
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    DetialController *detialVC = [[DetialController alloc]init];
+    [self.navigationController pushViewController:detialVC animated:YES];
+    
+    SecTopicsModel *model = [self.secModelArray objectAtIndex:0];
+    detialVC.model = model;
+    detialVC.index = indexPath.row;
     
 }
 
 
+
+#pragma mark - modelArr 的懒加载
+- (NSMutableArray *)modelArr
+{
+    if (!_modelArr) {
+        self.modelArr = [NSMutableArray array];
+    }
+    return _modelArr;
+}
+#pragma mark - secModelArray的懒加载
+- (NSMutableArray *)secModelArray
+{
+    if (!_secModelArray) {
+        self.secModelArray = [NSMutableArray array];
+    }
+    return _secModelArray;
+}
 #pragma mark - getDataFromUrl
 - (void) getDataFromUrl
 {
-    NetworkEngine *engine = [NetworkEngine netWorkEngineWithURL:[NSURL URLWithString:kCycleViewUrl] params:nil delegate:self];
-    [engine start];
-    
+    NSURL *url1 = [NSURL URLWithString:kCycleViewUrl];
+    NSURL *url2 = [NSURL URLWithString:kCollectionViewUrl];
+    NSArray *arr = @[url1, url2];
+    for (NSURL *url in arr) {
+        NetworkEngine *engine = [NetworkEngine netWorkEngineWithURL:url params:nil delegate:self];
+        [engine start];
+    }
 }
 #pragma mark - 数据请求成功的代理方法
-- (void)netWorkDidFinishLoading:(NetworkEngine *)engine withInfo:(NSData *)data
+- (void)netWorkDidFinishLoading:(NetworkEngine *)engine withInfo:(NSData *)data 
 {
-
-    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-    NSDictionary *dataDic = dic[@"data"];
-    NSArray *banner_group = dataDic[@"banner_group"];
-  
-    // 把得到的数据存放到数组当中
-    for (NSDictionary *itemDic in banner_group) {
-        CycleModel *Model = [[CycleModel alloc]cyecleModelWithDictionary:itemDic];
-        [self.allModelArray addObject:Model];
-    }
-   
-    NSMutableArray *picUrls = [NSMutableArray array];
-    for (CycleModel *model in self.allModelArray) {
-        NSString *picUrl = model.pic;
-        NSURL *url = [NSURL URLWithString:picUrl];
-        [picUrls addObject:url];
+    if ([engine.url isEqual:[NSURL URLWithString:kCycleViewUrl]]){
+        NSMutableDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+        NSDictionary *dataDic = dic[@"data"];
+        NSArray *banner_group = dataDic[@"banner_group"];
+        
+        // 把得到的数据存放到数组当中
+        for (NSDictionary *itemDic in banner_group) {
+            CycleModel *Model = [[CycleModel alloc]cyecleModelWithDictionary:itemDic];
+            [self.allModelArray addObject:Model];
+        }
+        NSMutableArray *picUrls = [NSMutableArray array];
+        for (CycleModel *model in self.allModelArray) {
+            NSString *picUrl = model.pic;
+            NSURL *url = [NSURL URLWithString:picUrl];
+            [picUrls addObject:url];
+        }
+        [self.tableView reloadData];
+        // 创建cycle 轮播
+        self.cycleView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, self.view.frame.size.width, kCycleViewHeight) imageURLsGroup:picUrls];
+        self.cycleView.autoScrollTimeInterval = 2.0;
+        self.cycleView.delegate = self;
+        [self.tableView.tableHeaderView addSubview:self.cycleView];
     }
     
-    // 创建cycle 轮播
-    SDCycleScrollView *cycleView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, self.view.frame.size.width, kCycleViewHeight) imageURLsGroup:picUrls];
-    cycleView.autoScrollTimeInterval = 2.0;
-    [self.tableView addSubview:cycleView];
-
+    if ([engine.url isEqual:[NSURL URLWithString:kCollectionViewUrl]]) {
+    // findItemCell 里面的网络请求数据
+        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+        NSDictionary *dataDic = dic[@"data"];
+        // 四大主题
+        NSArray *topicsArr = dataDic[@"topics"];
+        for (NSDictionary *topDic in topicsArr) {
+            BigModel *bigModel = [[BigModel alloc]initWithDictionary:topDic];
+            [self.modelArr addObject:bigModel];
+        }
+        NSDictionary *itemDic = [NSDictionary dictionary];
+        itemDic = [topicsArr objectAtIndex:1];
+        // 定义字典里面的数组
+        NSArray *itemArr = [NSArray array];
+        itemArr = itemDic[@"comics"];
+        NSLog(@"%@", itemArr);
+        // 第二主题栏
+        SecTopicsModel *secModel = [[SecTopicsModel alloc]initWithArray:itemArr];
+        [self.secModelArray addObject:secModel];
+    [self.tableView reloadData];
+    }
 }
-// 懒加载 allModel
+#pragma mark - SDCycleView Delegate
+- (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index
+{
+    DetialController *detailVC = [[DetialController alloc]init];
+    [self.navigationController pushViewController:detailVC animated:YES];
+    SecTopicsModel *model = [self.secModelArray objectAtIndex:0];
+    detailVC.model = model;
+    detailVC.index = index;
+}
+
+// 懒加载 _allModelArray
 - (NSMutableArray *)allModelArray
 {
     if (!_allModelArray) {
@@ -93,6 +215,7 @@
     }
     return _allModelArray;
 }
+
 #pragma mark - searchBarAction
 - (void) searchBarAction:(UIBarButtonItem *)sender
 {
@@ -108,6 +231,7 @@
 {
     [_allModelArray release];
     [_tableView release];
+    [_modelArr release];
     [super dealloc];
 }
 /*

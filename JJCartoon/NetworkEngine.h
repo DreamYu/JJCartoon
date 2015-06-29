@@ -20,9 +20,10 @@
 
 @end
 
-
-
 @interface NetworkEngine : NSObject
+
+// 请求地址
+@property (nonatomic , retain) NSURL *url;
 
 // 外界初始化网络请求的方法
 + (id)netWorkEngineWithURL:(NSURL *)url params:(NSDictionary *)params delegate:(id<NetworkEngineDelegate>)delegate;

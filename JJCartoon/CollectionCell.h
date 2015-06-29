@@ -14,4 +14,5 @@
 @property (nonatomic, retain) EGOImageView *photoImage;
 @property (nonatomic, retain) UILabel *titleLabel;
 
+
 @end

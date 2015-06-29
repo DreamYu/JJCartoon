@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3417F18C1B3D4F6500F85B02 /* BigModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3417F18B1B3D4F6500F85B02 /* BigModel.m */; };
 		3443AED31B3C1F9400DF9C2C /* FindItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3443AED21B3C1F9400DF9C2C /* FindItemCell.m */; };
 		3443AED61B3C334700DF9C2C /* CollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3443AED51B3C334700DF9C2C /* CollectionCell.m */; };
 		3443AEE21B3C398B00DF9C2C /* EGOCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 3443AED91B3C398B00DF9C2C /* EGOCache.m */; };
@@ -27,6 +28,13 @@
 		3453ABB01B3BA2D30049C184 /* ThirdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3453ABAE1B3BA2D30049C184 /* ThirdViewController.xib */; };
 		3453ABB91B3BAA7D0049C184 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3453ABB71B3BAA7D0049C184 /* RootViewController.m */; };
 		3453ABBA1B3BAA7D0049C184 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3453ABB81B3BAA7D0049C184 /* RootViewController.xib */; };
+		345B2BFB1B40EC3E0076C38D /* FindItemCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = 345B2BFA1B40EC3E0076C38D /* FindItemCell2.m */; };
+		345B2BFE1B41315C0076C38D /* DetialController.m in Sources */ = {isa = PBXBuildFile; fileRef = 345B2BFD1B41315C0076C38D /* DetialController.m */; };
+		345B2C011B4141280076C38D /* ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 345B2C001B4141280076C38D /* ContentViewController.m */; };
+		3481E2AF1B3EDDFD006AB7F0 /* SecTopicsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3481E2AE1B3EDDFD006AB7F0 /* SecTopicsModel.m */; };
+		34839D321B3FF4C5000C43FB /* SecTopModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34839D311B3FF4C5000C43FB /* SecTopModel.m */; };
+		348D69641B3E94120090CF3F /* TopicsArrModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 348D69631B3E94120090CF3F /* TopicsArrModel.m */; };
+		348D69671B3E952F0090CF3F /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 348D69661B3E952F0090CF3F /* UserModel.m */; };
 		34AE055C1B3BB26800E1E6D3 /* NSData+SDDataCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 34AE054C1B3BB26800E1E6D3 /* NSData+SDDataCache.m */; };
 		34AE055D1B3BB26800E1E6D3 /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34AE054F1B3BB26800E1E6D3 /* TAAbstractDotView.m */; };
 		34AE055E1B3BB26800E1E6D3 /* TAAnimatedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34AE05511B3BB26800E1E6D3 /* TAAnimatedDotView.m */; };
@@ -50,6 +58,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3417F18A1B3D4F6500F85B02 /* BigModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigModel.h; sourceTree = "<group>"; };
+		3417F18B1B3D4F6500F85B02 /* BigModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigModel.m; sourceTree = "<group>"; };
 		3443AED11B3C1F9400DF9C2C /* FindItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindItemCell.h; sourceTree = "<group>"; };
 		3443AED21B3C1F9400DF9C2C /* FindItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindItemCell.m; sourceTree = "<group>"; };
 		3443AED41B3C334700DF9C2C /* CollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionCell.h; sourceTree = "<group>"; };
@@ -86,6 +96,20 @@
 		3453ABB61B3BAA7D0049C184 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		3453ABB71B3BAA7D0049C184 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		3453ABB81B3BAA7D0049C184 /* RootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
+		345B2BF91B40EC3E0076C38D /* FindItemCell2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindItemCell2.h; sourceTree = "<group>"; };
+		345B2BFA1B40EC3E0076C38D /* FindItemCell2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindItemCell2.m; sourceTree = "<group>"; };
+		345B2BFC1B41315C0076C38D /* DetialController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetialController.h; sourceTree = "<group>"; };
+		345B2BFD1B41315C0076C38D /* DetialController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetialController.m; sourceTree = "<group>"; };
+		345B2BFF1B4141280076C38D /* ContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentViewController.h; sourceTree = "<group>"; };
+		345B2C001B4141280076C38D /* ContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentViewController.m; sourceTree = "<group>"; };
+		3481E2AD1B3EDDFD006AB7F0 /* SecTopicsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecTopicsModel.h; sourceTree = "<group>"; };
+		3481E2AE1B3EDDFD006AB7F0 /* SecTopicsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecTopicsModel.m; sourceTree = "<group>"; };
+		34839D301B3FF4C5000C43FB /* SecTopModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecTopModel.h; sourceTree = "<group>"; };
+		34839D311B3FF4C5000C43FB /* SecTopModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecTopModel.m; sourceTree = "<group>"; };
+		348D69621B3E94120090CF3F /* TopicsArrModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicsArrModel.h; sourceTree = "<group>"; };
+		348D69631B3E94120090CF3F /* TopicsArrModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicsArrModel.m; sourceTree = "<group>"; };
+		348D69651B3E952F0090CF3F /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
+		348D69661B3E952F0090CF3F /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
 		34AE054B1B3BB26800E1E6D3 /* NSData+SDDataCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+SDDataCache.h"; sourceTree = "<group>"; };
 		34AE054C1B3BB26800E1E6D3 /* NSData+SDDataCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+SDDataCache.m"; sourceTree = "<group>"; };
 		34AE054E1B3BB26800E1E6D3 /* TAAbstractDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAbstractDotView.h; sourceTree = "<group>"; };
@@ -353,6 +377,10 @@
 			children = (
 				3453ABA71B3BA2BE0049C184 /* SecondViewController.h */,
 				3453ABA81B3BA2BE0049C184 /* SecondViewController.m */,
+				345B2BFF1B4141280076C38D /* ContentViewController.h */,
+				345B2C001B4141280076C38D /* ContentViewController.m */,
+				345B2BFC1B41315C0076C38D /* DetialController.h */,
+				345B2BFD1B41315C0076C38D /* DetialController.m */,
 				3453ABA91B3BA2BE0049C184 /* SecondViewController.xib */,
 			);
 			name = ViewController;
@@ -365,6 +393,8 @@
 				3443AED21B3C1F9400DF9C2C /* FindItemCell.m */,
 				3443AED41B3C334700DF9C2C /* CollectionCell.h */,
 				3443AED51B3C334700DF9C2C /* CollectionCell.m */,
+				345B2BF91B40EC3E0076C38D /* FindItemCell2.h */,
+				345B2BFA1B40EC3E0076C38D /* FindItemCell2.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -374,6 +404,16 @@
 			children = (
 				34AE05641B3BDC1A00E1E6D3 /* CycleModel.h */,
 				34AE05651B3BDC1A00E1E6D3 /* CycleModel.m */,
+				3417F18A1B3D4F6500F85B02 /* BigModel.h */,
+				3417F18B1B3D4F6500F85B02 /* BigModel.m */,
+				348D69621B3E94120090CF3F /* TopicsArrModel.h */,
+				348D69631B3E94120090CF3F /* TopicsArrModel.m */,
+				348D69651B3E952F0090CF3F /* UserModel.h */,
+				348D69661B3E952F0090CF3F /* UserModel.m */,
+				3481E2AD1B3EDDFD006AB7F0 /* SecTopicsModel.h */,
+				3481E2AE1B3EDDFD006AB7F0 /* SecTopicsModel.m */,
+				34839D301B3FF4C5000C43FB /* SecTopModel.h */,
+				34839D311B3FF4C5000C43FB /* SecTopModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -579,13 +619,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3417F18C1B3D4F6500F85B02 /* BigModel.m in Sources */,
+				3481E2AF1B3EDDFD006AB7F0 /* SecTopicsModel.m in Sources */,
 				34AE055C1B3BB26800E1E6D3 /* NSData+SDDataCache.m in Sources */,
+				34839D321B3FF4C5000C43FB /* SecTopModel.m in Sources */,
 				34AE055D1B3BB26800E1E6D3 /* TAAbstractDotView.m in Sources */,
 				3453ABAA1B3BA2BE0049C184 /* SecondViewController.m in Sources */,
 				3443AED61B3C334700DF9C2C /* CollectionCell.m in Sources */,
 				3443AEE51B3C398B00DF9C2C /* EGOImageLoader.m in Sources */,
 				3453AB5C1B3B9A2F0049C184 /* AppDelegate.m in Sources */,
 				34AE05621B3BB26800E1E6D3 /* SDCycleScrollView.m in Sources */,
+				345B2BFE1B41315C0076C38D /* DetialController.m in Sources */,
+				345B2C011B4141280076C38D /* ContentViewController.m in Sources */,
+				348D69671B3E952F0090CF3F /* UserModel.m in Sources */,
 				3453ABB91B3BAA7D0049C184 /* RootViewController.m in Sources */,
 				3453ABAF1B3BA2D30049C184 /* ThirdViewController.m in Sources */,
 				3443AEE61B3C398B00DF9C2C /* EGOImageView.m in Sources */,
@@ -602,6 +648,8 @@
 				34AE055E1B3BB26800E1E6D3 /* TAAnimatedDotView.m in Sources */,
 				34AE055F1B3BB26800E1E6D3 /* TADotView.m in Sources */,
 				34AE05611B3BB26800E1E6D3 /* SDCollectionViewCell.m in Sources */,
+				348D69641B3E94120090CF3F /* TopicsArrModel.m in Sources */,
+				345B2BFB1B40EC3E0076C38D /* FindItemCell2.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

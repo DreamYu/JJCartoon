@@ -26,10 +26,13 @@
 {
     if (!_titleLabel) {
         self.titleLabel = [[UILabel alloc]init];
-        UIToolbar *toolBar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, self.contentView.bounds.size.height - 30, self.contentView.bounds.size.width, 30)];
-        toolBar.backgroundColor = [UIColor lightGrayColor];
+        UIToolbar *toolBar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, self.contentView.bounds.size.height - 50, self.contentView.bounds.size.width, 30)];
+        toolBar.backgroundColor = [UIColor yellowColor];
+        toolBar.alpha = .4;
         [self.contentView addSubview:toolBar];
         self.titleLabel.frame = CGRectMake(0, 0, self.contentView.bounds.size.width, 30);
+        self.titleLabel.highlightedTextColor = [UIColor whiteColor];
+        self.titleLabel.font = [UIFont systemFontOfSize:17.0];
         [toolBar addSubview:_titleLabel];
         [_titleLabel release];
         [toolBar release];
@@ -37,6 +40,9 @@
     return _titleLabel;
     
 }
+
+
+
 -(void)dealloc
 {
     [_titleLabel release];

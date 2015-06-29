@@ -21,8 +21,7 @@
 // 参数
 @property (nonatomic , retain) NSDictionary *params;
 
-// 请求地址
-@property (nonatomic , retain) NSURL *url;
+
 
 // 请求方式
 @property (nonatomic , retain) NSString *HTTPMethod;

@@ -77,8 +77,6 @@
     _title = [title copy];
     _titleLabel.text = [NSString stringWithFormat:@"   %@", title];
 }
-
-
 - (void)layoutSubviews
 {
     [super layoutSubviews];

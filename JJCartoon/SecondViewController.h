@@ -11,5 +11,7 @@
 @interface SecondViewController : UIViewController
 
 @property (nonatomic, retain) NSMutableArray *allModelArray;
+@property (nonatomic, retain) NSMutableArray *secModelArray;
+@property (nonatomic, retain) NSMutableArray *modelArr;
 
 @end

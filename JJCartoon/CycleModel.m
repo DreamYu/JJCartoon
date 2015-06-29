@@ -9,12 +9,20 @@
 #import "CycleModel.h"
 
 @implementation CycleModel
+-(void)setValue:(id)value forUndefinedKey:(NSString *)key
+{
+    
+}
+
 - (instancetype)cyecleModelWithDictionary:(NSDictionary *)dic
 {
     self = [super init];
     if (self) {
-        self.pic = dic[@"pic"];
-        self.value = dic[@"value"];
+//        self.pic = dic[@"pic"];
+//        self.value = dic[@"value"];
+        [self setValuesForKeysWithDictionary:dic];
+        
+        
     }
     return  self;
 }
