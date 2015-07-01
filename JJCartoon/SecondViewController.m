@@ -16,8 +16,7 @@
 #import "SecTopicsModel.h"
 #import "SecTopModel.h"
 #import "DetialController.h"
-
-
+#import "ContentViewController.h"
 
 #define kCycleViewHeight 220 //cycleView的高度
 // getDataFromUrl 的URL
@@ -28,8 +27,10 @@
 @interface SecondViewController ()<NetworkEngineDelegate, UITableViewDataSource, UITableViewDelegate, UICollectionViewDelegate, SDCycleScrollViewDelegate>
 @property (nonatomic, retain) UITableView *tableView;
 @property (nonatomic, retain) SDCycleScrollView *cycleView;
-
+@property (nonatomic, assign) NSInteger index;
 @end
+
+
 
 @implementation SecondViewController
 
@@ -45,22 +46,14 @@
     self.view = self.tableView;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    
-      // 给tabelview添加预留空间
+  // 给tabelview添加预留空间
     UIView * view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 375, kCycleViewHeight)];
     view.backgroundColor = [UIColor cyanColor];
     self.tableView.tableHeaderView = view;
-    
     [self.tableView release];
-    
     // Do any additional setup after loading the view from its nib.
 }
 #pragma mark - UITableView Delegate
-- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSLog(@"%ld, %ld", (long)indexPath.section, (long)indexPath.row);
-
-}
 - (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
@@ -74,6 +67,7 @@
 {
     return 200;
 }
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row == 1) {
@@ -82,13 +76,11 @@
         if (nil == cell) {
             cell = [[FindItemCell2 alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:findCell2ID];
         }
-        SecTopicsModel *molde = [self.secModelArray objectAtIndex:0];
+        SecTopicsModel *modle = [self.secModelArray objectAtIndex:0];
         cell.titleLabel.text = @"热门单篇";
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.model = molde;
+        cell.model = modle;
         cell.collectionView.delegate = self;
-       
-       
         return cell;
     }  else {
         NSString *findCellID = @"findCellID";
@@ -102,24 +94,29 @@
         cell.titleLabel.text = model.title;
         // 选中cell的颜色
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.collectionView.delegate =  self;
         return cell;
-
     }
-
 }
 #pragma mark - Collection Delegate
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    DetialController *detialVC = [[DetialController alloc]init];
-    [self.navigationController pushViewController:detialVC animated:YES];
-    
-    SecTopicsModel *model = [self.secModelArray objectAtIndex:0];
-    detialVC.model = model;
-    detialVC.index = indexPath.row;
-    
+    UIView *cell = [collectionView superview];
+    if ([[NSString stringWithFormat:@"%@", [cell class]] isEqual:@"FindItemCell2"]) {
+        DetialController *detialVC = [[DetialController alloc]init];
+        [self.navigationController pushViewController:detialVC animated:YES];
+        SecTopicsModel *model = [self.secModelArray objectAtIndex:0];
+        detialVC.model = model;
+        detialVC.index = indexPath.row;
+    } else {
+        ContentViewController *contentVC = [[ContentViewController alloc]init];
+        contentVC.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+        [self.navigationController pushViewController:contentVC animated:YES];
+        BigModel *model = [self.modelArr objectAtIndex:indexPath.row];
+        contentVC.model = model;
+        contentVC.index = indexPath.row;
+    }
 }
-
-
 
 #pragma mark - modelArr 的懒加载
 - (NSMutableArray *)modelArr
@@ -228,7 +225,7 @@
 }
 
 -(void)dealloc
-{
+{  
     [_allModelArray release];
     [_tableView release];
     [_modelArr release];

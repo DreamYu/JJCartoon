@@ -7,12 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EGOImageView.h"
+#import "BigModel.h"
 
-@interface ContentViewController : UIViewController
+@interface ContentViewController : UIViewController<EGOImageViewDelegate>
 
-@property (nonatomic, retain) UIScrollView *scrollView;
-@property (nonatomic, retain) UIImageView *imageView;
-@property (nonatomic, retain) UIButton *introBUtton;
+@property (nonatomic, retain) UITableView *tableView;
+@property (nonatomic, retain) EGOImageView *imageView;
+@property (nonatomic, retain) UIButton *introButton;
 @property (nonatomic, retain) UIButton *contentButton;
+@property (nonatomic, retain) NSString *urlStr;
+@property (nonatomic, retain) UIScrollView *scroView;
+@property (nonatomic, retain) UITableView *introTableView;
+@property (nonatomic, retain) UITableView *contentTableView;
+
+@property (nonatomic, retain) BigModel *model;
+@property (nonatomic, assign) NSInteger index;
+
 
 @end

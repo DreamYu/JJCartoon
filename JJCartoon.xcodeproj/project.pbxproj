@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		3417F18C1B3D4F6500F85B02 /* BigModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3417F18B1B3D4F6500F85B02 /* BigModel.m */; };
+		341CAEC71B42BFB800DA7393 /* ContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 341CAEC61B42BFB800DA7393 /* ContentCell.m */; };
+		341CAECA1B42BFEC00DA7393 /* IntrodeceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 341CAEC91B42BFEC00DA7393 /* IntrodeceCell.m */; };
+		341CAECD1B42C90100DA7393 /* ContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 341CAECC1B42C90100DA7393 /* ContentModel.m */; };
 		3443AED31B3C1F9400DF9C2C /* FindItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3443AED21B3C1F9400DF9C2C /* FindItemCell.m */; };
 		3443AED61B3C334700DF9C2C /* CollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3443AED51B3C334700DF9C2C /* CollectionCell.m */; };
 		3443AEE21B3C398B00DF9C2C /* EGOCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 3443AED91B3C398B00DF9C2C /* EGOCache.m */; };
@@ -60,6 +63,12 @@
 /* Begin PBXFileReference section */
 		3417F18A1B3D4F6500F85B02 /* BigModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigModel.h; sourceTree = "<group>"; };
 		3417F18B1B3D4F6500F85B02 /* BigModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigModel.m; sourceTree = "<group>"; };
+		341CAEC51B42BFB800DA7393 /* ContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentCell.h; sourceTree = "<group>"; };
+		341CAEC61B42BFB800DA7393 /* ContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentCell.m; sourceTree = "<group>"; };
+		341CAEC81B42BFEC00DA7393 /* IntrodeceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntrodeceCell.h; sourceTree = "<group>"; };
+		341CAEC91B42BFEC00DA7393 /* IntrodeceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntrodeceCell.m; sourceTree = "<group>"; };
+		341CAECB1B42C90100DA7393 /* ContentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentModel.h; sourceTree = "<group>"; };
+		341CAECC1B42C90100DA7393 /* ContentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentModel.m; sourceTree = "<group>"; };
 		3443AED11B3C1F9400DF9C2C /* FindItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindItemCell.h; sourceTree = "<group>"; };
 		3443AED21B3C1F9400DF9C2C /* FindItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindItemCell.m; sourceTree = "<group>"; };
 		3443AED41B3C334700DF9C2C /* CollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionCell.h; sourceTree = "<group>"; };
@@ -150,6 +159,58 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		341CAEC11B42BE3700DA7393 /* ContentModel */ = {
+			isa = PBXGroup;
+			children = (
+				341CAECB1B42C90100DA7393 /* ContentModel.h */,
+				341CAECC1B42C90100DA7393 /* ContentModel.m */,
+			);
+			name = ContentModel;
+			sourceTree = "<group>";
+		};
+		341CAEC21B42BEA400DA7393 /* SecondModel */ = {
+			isa = PBXGroup;
+			children = (
+				34AE05641B3BDC1A00E1E6D3 /* CycleModel.h */,
+				34AE05651B3BDC1A00E1E6D3 /* CycleModel.m */,
+				3417F18A1B3D4F6500F85B02 /* BigModel.h */,
+				3417F18B1B3D4F6500F85B02 /* BigModel.m */,
+				348D69621B3E94120090CF3F /* TopicsArrModel.h */,
+				348D69631B3E94120090CF3F /* TopicsArrModel.m */,
+				348D69651B3E952F0090CF3F /* UserModel.h */,
+				348D69661B3E952F0090CF3F /* UserModel.m */,
+				3481E2AD1B3EDDFD006AB7F0 /* SecTopicsModel.h */,
+				3481E2AE1B3EDDFD006AB7F0 /* SecTopicsModel.m */,
+				34839D301B3FF4C5000C43FB /* SecTopModel.h */,
+				34839D311B3FF4C5000C43FB /* SecTopModel.m */,
+			);
+			name = SecondModel;
+			sourceTree = "<group>";
+		};
+		341CAEC31B42BF3300DA7393 /* FindViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				3443AED11B3C1F9400DF9C2C /* FindItemCell.h */,
+				3443AED21B3C1F9400DF9C2C /* FindItemCell.m */,
+				3443AED41B3C334700DF9C2C /* CollectionCell.h */,
+				3443AED51B3C334700DF9C2C /* CollectionCell.m */,
+				345B2BF91B40EC3E0076C38D /* FindItemCell2.h */,
+				345B2BFA1B40EC3E0076C38D /* FindItemCell2.m */,
+			);
+			name = FindViewCell;
+			sourceTree = "<group>";
+		};
+		341CAEC41B42BF5F00DA7393 /* ContentViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				341CAEC51B42BFB800DA7393 /* ContentCell.h */,
+				341CAEC61B42BFB800DA7393 /* ContentCell.m */,
+				341CAEC81B42BFEC00DA7393 /* IntrodeceCell.h */,
+				341CAEC91B42BFEC00DA7393 /* IntrodeceCell.m */,
+			);
+			name = ContentViewCell;
+			sourceTree = "<group>";
+		};
 		3443AED71B3C398B00DF9C2C /* EGOImageView */ = {
 			isa = PBXGroup;
 			children = (
@@ -389,12 +450,8 @@
 		3453AB8C1B3B9CBC0049C184 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				3443AED11B3C1F9400DF9C2C /* FindItemCell.h */,
-				3443AED21B3C1F9400DF9C2C /* FindItemCell.m */,
-				3443AED41B3C334700DF9C2C /* CollectionCell.h */,
-				3443AED51B3C334700DF9C2C /* CollectionCell.m */,
-				345B2BF91B40EC3E0076C38D /* FindItemCell2.h */,
-				345B2BFA1B40EC3E0076C38D /* FindItemCell2.m */,
+				341CAEC41B42BF5F00DA7393 /* ContentViewCell */,
+				341CAEC31B42BF3300DA7393 /* FindViewCell */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -402,18 +459,8 @@
 		3453AB8D1B3B9CBF0049C184 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				34AE05641B3BDC1A00E1E6D3 /* CycleModel.h */,
-				34AE05651B3BDC1A00E1E6D3 /* CycleModel.m */,
-				3417F18A1B3D4F6500F85B02 /* BigModel.h */,
-				3417F18B1B3D4F6500F85B02 /* BigModel.m */,
-				348D69621B3E94120090CF3F /* TopicsArrModel.h */,
-				348D69631B3E94120090CF3F /* TopicsArrModel.m */,
-				348D69651B3E952F0090CF3F /* UserModel.h */,
-				348D69661B3E952F0090CF3F /* UserModel.m */,
-				3481E2AD1B3EDDFD006AB7F0 /* SecTopicsModel.h */,
-				3481E2AE1B3EDDFD006AB7F0 /* SecTopicsModel.m */,
-				34839D301B3FF4C5000C43FB /* SecTopModel.h */,
-				34839D311B3FF4C5000C43FB /* SecTopModel.m */,
+				341CAEC21B42BEA400DA7393 /* SecondModel */,
+				341CAEC11B42BE3700DA7393 /* ContentModel */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -622,6 +669,7 @@
 				3417F18C1B3D4F6500F85B02 /* BigModel.m in Sources */,
 				3481E2AF1B3EDDFD006AB7F0 /* SecTopicsModel.m in Sources */,
 				34AE055C1B3BB26800E1E6D3 /* NSData+SDDataCache.m in Sources */,
+				341CAEC71B42BFB800DA7393 /* ContentCell.m in Sources */,
 				34839D321B3FF4C5000C43FB /* SecTopModel.m in Sources */,
 				34AE055D1B3BB26800E1E6D3 /* TAAbstractDotView.m in Sources */,
 				3453ABAA1B3BA2BE0049C184 /* SecondViewController.m in Sources */,
@@ -637,11 +685,13 @@
 				3443AEE61B3C398B00DF9C2C /* EGOImageView.m in Sources */,
 				3443AED31B3C1F9400DF9C2C /* FindItemCell.m in Sources */,
 				34AE05631B3BB26800E1E6D3 /* UIView+SDExtension.m in Sources */,
+				341CAECA1B42BFEC00DA7393 /* IntrodeceCell.m in Sources */,
 				34AE05601B3BB26800E1E6D3 /* TAPageControl.m in Sources */,
 				3443AEE41B3C398B00DF9C2C /* EGOImageLoadConnection.m in Sources */,
 				3453AB591B3B9A2F0049C184 /* main.m in Sources */,
 				34AE056B1B3BE2CB00E1E6D3 /* NetworkEngine.m in Sources */,
 				3443AEE31B3C398B00DF9C2C /* EGOImageButton.m in Sources */,
+				341CAECD1B42C90100DA7393 /* ContentModel.m in Sources */,
 				34AE05661B3BDC1A00E1E6D3 /* CycleModel.m in Sources */,
 				3453ABA51B3BA2A90049C184 /* FirstViewController.m in Sources */,
 				3443AEE21B3C398B00DF9C2C /* EGOCache.m in Sources */,

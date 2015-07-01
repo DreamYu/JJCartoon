@@ -131,17 +131,14 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    
     NSLog(@"%ld, %ld", indexPath.section, indexPath.row);
 }
-
 
 #pragma mark - modelArr 的懒加载
 - (NSMutableArray *)modelArr
 {
     if (!_modelArr) {
         self.modelArr = [NSMutableArray array];
-        
     }
     return _modelArr;
 }

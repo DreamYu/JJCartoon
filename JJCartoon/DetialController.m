@@ -23,10 +23,7 @@
     NSURLRequest *request = [[NSURLRequest alloc]initWithURL:[NSURL URLWithString:urlStr]];
     [self.webView loadRequest:request];
     [self.view addSubview:self.webView];
-    
-    
-    
-    
+
     // Do any additional setup after loading the view.
 }
 

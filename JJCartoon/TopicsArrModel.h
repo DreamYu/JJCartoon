@@ -18,6 +18,8 @@
 @property (nonatomic, retain) NSMutableArray *title;
 @property (nonatomic, retain) NSMutableArray *updated_at;
 @property (nonatomic, retain) NSMutableArray *vertical_image_url;
+@property (nonatomic, retain) NSMutableArray *id1;
+
 // user 的字典
 @property (nonatomic, retain) UserModel *user;
 

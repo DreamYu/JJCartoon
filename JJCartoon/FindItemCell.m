@@ -139,12 +139,6 @@
     return cell;
 }
 
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    
-    
-}
-
 
 #pragma mark - modelArr 的懒加载
 - (NSMutableArray *)modelArr

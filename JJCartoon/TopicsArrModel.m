@@ -19,11 +19,12 @@
                 [self.vertical_image_url addObject:tempDic[@"vertical_image_url"]];
                 [self.title addObject:tempDic[@"title"]];
                 self.description1 = tempDic[@"description"];
+                NSLog(@"%@", tempDic[@"id"]);
+                [self.id1 addObject:tempDic[@"id"]];
                 self.user = [[UserModel alloc]initWithDictionary:tempDic[@"user"]];
             }
         }
     }
-    
     return self;
 }
 #pragma mark -- 数组的懒加载
@@ -43,8 +44,17 @@
         self.title = [NSMutableArray array];
     }
     return _title;
-    
 }
+- (NSMutableArray *) id1
+{
+    
+    if (!_id1) {
+        self.id1 = [NSMutableArray array];
+    }
+    return _id1;
+}
+
+
 
 
 -(void)setValue:(id)value forUndefinedKey:(NSString *)key
