@@ -21,8 +21,15 @@
 @property (nonatomic, retain) UITableView *introTableView;
 @property (nonatomic, retain) UITableView *contentTableView;
 
+// 接收数据 id
+@property (nonatomic, retain) NSString *id1;
 @property (nonatomic, retain) BigModel *model;
 @property (nonatomic, assign) NSInteger index;
+// 接收头部图片地址
+@property (nonatomic, retain) NSString *headImageUrl;
+// 返回button
+@property (nonatomic, retain) UIButton *backButton;
+
 
 
 @end

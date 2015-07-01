@@ -13,7 +13,7 @@
 #define kTitleLabelWidth 230
 #define kLabelHeight 30
 #define kDateWidth 50
-#define kLikeWidth 60
+#define kLikeWidth 100
 
 @implementation ContentCell
 
@@ -30,7 +30,6 @@
 {
     // 设置 headImage
     self.headImage = [[EGOImageView alloc]init];
-   
     self.headImage.frame = CGRectMake(10, 10, kHeadImageWidth, kHeadImageHeight);
     [self addSubview:self.headImage];
       // 设置 titleLabel

@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3417F18C1B3D4F6500F85B02 /* BigModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3417F18B1B3D4F6500F85B02 /* BigModel.m */; };
-		341CAEC71B42BFB800DA7393 /* ContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 341CAEC61B42BFB800DA7393 /* ContentCell.m */; };
-		341CAECA1B42BFEC00DA7393 /* IntrodeceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 341CAEC91B42BFEC00DA7393 /* IntrodeceCell.m */; };
 		341CAECD1B42C90100DA7393 /* ContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 341CAECC1B42C90100DA7393 /* ContentModel.m */; };
 		3443AED31B3C1F9400DF9C2C /* FindItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3443AED21B3C1F9400DF9C2C /* FindItemCell.m */; };
 		3443AED61B3C334700DF9C2C /* CollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3443AED51B3C334700DF9C2C /* CollectionCell.m */; };
@@ -48,6 +46,7 @@
 		34AE05631B3BB26800E1E6D3 /* UIView+SDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 34AE055B1B3BB26800E1E6D3 /* UIView+SDExtension.m */; };
 		34AE05661B3BDC1A00E1E6D3 /* CycleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34AE05651B3BDC1A00E1E6D3 /* CycleModel.m */; };
 		34AE056B1B3BE2CB00E1E6D3 /* NetworkEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 34AE056A1B3BE2CB00E1E6D3 /* NetworkEngine.m */; };
+		34E09CDE1B4425E400BF171C /* ContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E09CDD1B4425E400BF171C /* ContentCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,10 +62,6 @@
 /* Begin PBXFileReference section */
 		3417F18A1B3D4F6500F85B02 /* BigModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigModel.h; sourceTree = "<group>"; };
 		3417F18B1B3D4F6500F85B02 /* BigModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigModel.m; sourceTree = "<group>"; };
-		341CAEC51B42BFB800DA7393 /* ContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentCell.h; sourceTree = "<group>"; };
-		341CAEC61B42BFB800DA7393 /* ContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentCell.m; sourceTree = "<group>"; };
-		341CAEC81B42BFEC00DA7393 /* IntrodeceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntrodeceCell.h; sourceTree = "<group>"; };
-		341CAEC91B42BFEC00DA7393 /* IntrodeceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntrodeceCell.m; sourceTree = "<group>"; };
 		341CAECB1B42C90100DA7393 /* ContentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentModel.h; sourceTree = "<group>"; };
 		341CAECC1B42C90100DA7393 /* ContentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentModel.m; sourceTree = "<group>"; };
 		3443AED11B3C1F9400DF9C2C /* FindItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindItemCell.h; sourceTree = "<group>"; };
@@ -139,6 +134,8 @@
 		34AE05651B3BDC1A00E1E6D3 /* CycleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CycleModel.m; sourceTree = "<group>"; };
 		34AE05691B3BE2CB00E1E6D3 /* NetworkEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkEngine.h; sourceTree = "<group>"; };
 		34AE056A1B3BE2CB00E1E6D3 /* NetworkEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkEngine.m; sourceTree = "<group>"; };
+		34E09CDC1B4425E400BF171C /* ContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentCell.h; sourceTree = "<group>"; };
+		34E09CDD1B4425E400BF171C /* ContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,17 +195,6 @@
 				345B2BFA1B40EC3E0076C38D /* FindItemCell2.m */,
 			);
 			name = FindViewCell;
-			sourceTree = "<group>";
-		};
-		341CAEC41B42BF5F00DA7393 /* ContentViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				341CAEC51B42BFB800DA7393 /* ContentCell.h */,
-				341CAEC61B42BFB800DA7393 /* ContentCell.m */,
-				341CAEC81B42BFEC00DA7393 /* IntrodeceCell.h */,
-				341CAEC91B42BFEC00DA7393 /* IntrodeceCell.m */,
-			);
-			name = ContentViewCell;
 			sourceTree = "<group>";
 		};
 		3443AED71B3C398B00DF9C2C /* EGOImageView */ = {
@@ -450,7 +436,7 @@
 		3453AB8C1B3B9CBC0049C184 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				341CAEC41B42BF5F00DA7393 /* ContentViewCell */,
+				34E09CDB1B4425D000BF171C /* ContentCell */,
 				341CAEC31B42BF3300DA7393 /* FindViewCell */,
 			);
 			name = View;
@@ -563,6 +549,15 @@
 			name = NetworkEngine;
 			sourceTree = "<group>";
 		};
+		34E09CDB1B4425D000BF171C /* ContentCell */ = {
+			isa = PBXGroup;
+			children = (
+				34E09CDC1B4425E400BF171C /* ContentCell.h */,
+				34E09CDD1B4425E400BF171C /* ContentCell.m */,
+			);
+			name = ContentCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -669,9 +664,9 @@
 				3417F18C1B3D4F6500F85B02 /* BigModel.m in Sources */,
 				3481E2AF1B3EDDFD006AB7F0 /* SecTopicsModel.m in Sources */,
 				34AE055C1B3BB26800E1E6D3 /* NSData+SDDataCache.m in Sources */,
-				341CAEC71B42BFB800DA7393 /* ContentCell.m in Sources */,
 				34839D321B3FF4C5000C43FB /* SecTopModel.m in Sources */,
 				34AE055D1B3BB26800E1E6D3 /* TAAbstractDotView.m in Sources */,
+				34E09CDE1B4425E400BF171C /* ContentCell.m in Sources */,
 				3453ABAA1B3BA2BE0049C184 /* SecondViewController.m in Sources */,
 				3443AED61B3C334700DF9C2C /* CollectionCell.m in Sources */,
 				3443AEE51B3C398B00DF9C2C /* EGOImageLoader.m in Sources */,
@@ -685,7 +680,6 @@
 				3443AEE61B3C398B00DF9C2C /* EGOImageView.m in Sources */,
 				3443AED31B3C1F9400DF9C2C /* FindItemCell.m in Sources */,
 				34AE05631B3BB26800E1E6D3 /* UIView+SDExtension.m in Sources */,
-				341CAECA1B42BFEC00DA7393 /* IntrodeceCell.m in Sources */,
 				34AE05601B3BB26800E1E6D3 /* TAPageControl.m in Sources */,
 				3443AEE41B3C398B00DF9C2C /* EGOImageLoadConnection.m in Sources */,
 				3453AB591B3B9A2F0049C184 /* main.m in Sources */,

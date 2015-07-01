@@ -17,6 +17,7 @@
         if (![arr isKindOfClass:[NSNull class]]){
             for (NSDictionary *tempDic in arr) {
                 [self.vertical_image_url addObject:tempDic[@"vertical_image_url"]];
+                [self.cover_image_url addObject:tempDic[@"cover_image_url"]];
                 [self.title addObject:tempDic[@"title"]];
                 self.description1 = tempDic[@"description"];
                 NSLog(@"%@", tempDic[@"id"]);
@@ -28,6 +29,14 @@
     return self;
 }
 #pragma mark -- 数组的懒加载
+- (NSMutableArray *) cover_image_url
+{
+    if (!_cover_image_url) {
+        self.cover_image_url = [NSMutableArray array];
+    }
+    return _cover_image_url;    
+}
+
 - (NSMutableArray *) vertical_image_url
 {
     

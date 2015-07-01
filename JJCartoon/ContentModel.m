@@ -18,12 +18,21 @@
             [self.likes_count addObject:dic[@"likes_count"]];
             [self.title addObject:dic[@"title"]];
             [self.topic_id addObject:dic[@"topic_id"]];
+            [self.updated_at addObject:dic[@"updated_at"]];
             [self.url addObject:dic[@"url"]];
         }
     }
     return self;
 }
 #pragma mark -  属性的懒加载
+- (NSMutableArray *)updated_at
+{
+    if (!_updated_at) {
+        self.updated_at = [NSMutableArray array];
+    }
+    return _updated_at;
+}
+
 - (NSMutableArray *)cover_image_url
 {
     if (!_cover_image_url) {

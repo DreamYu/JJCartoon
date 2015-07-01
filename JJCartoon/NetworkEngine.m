@@ -8,20 +8,11 @@
 
 #import "NetworkEngine.h"
 
-
-
-
-
-
-
 @interface NetworkEngine ()
 
 @property (nonatomic , assign) id<NetworkEngineDelegate> delegate;
-
 // 参数
 @property (nonatomic , retain) NSDictionary *params;
-
-
 
 // 请求方式
 @property (nonatomic , retain) NSString *HTTPMethod;
@@ -116,7 +107,6 @@
         // 使用POST请求，需要给可变的请求体属性赋值参数字符串
         requst.HTTPBody = [self.stringFromParams dataUsingEncoding:NSUTF8StringEncoding];
     }
-    
     // 使用异步方式来连接
     [NSURLConnection sendAsynchronousRequest:requst queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
         if (_delegate && [_delegate respondsToSelector:@selector(netWorkDidFinishLoading:withInfo:)]) {

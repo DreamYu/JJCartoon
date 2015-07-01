@@ -117,7 +117,7 @@
     return _itemArray;
 }
 
-#pragma mark - UICollectionView Delegate
+#pragma mark - UICollectionView DataSource
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
@@ -138,6 +138,11 @@
     cell.titleLabel.text = self.model.topicsArrModel.title[indexPath.row];
     return cell;
 }
+
+//- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    [self setSelected:YES animated:YES];
+//}
 
 
 #pragma mark - modelArr 的懒加载
