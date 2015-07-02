@@ -124,17 +124,20 @@
        
         // 把Model传到下一界面
         BigModel *model = [self.modelArr objectAtIndex:selectedIndexPath.row];
-        contentVC.model = model;
+        // 获得id值 拼接使用
         contentVC.id1 = model.topicsArrModel.id1[indexPath.row];
         contentVC.index = indexPath.row;
         // 传递头部 URL 信息
         contentVC.headImageUrl = model.topicsArrModel.cover_image_url[indexPath.row];
-         contentVC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-         [self presentViewController:contentVC animated:YES completion:nil];
-       
+        // 获取描述信息
+        contentVC.descriptionContent = model.topicsArrModel.description1[indexPath.row];
+        //  获取user信息
+        contentVC.userModel = model.topicsArrModel.userModelArr[indexPath.row];
+        
+        contentVC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        [self presentViewController:contentVC animated:YES completion:nil];
     }
 }
-
 #pragma mark - modelArr 的懒加载
 - (NSMutableArray *)modelArr
 {
@@ -170,7 +173,6 @@
         NSMutableDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
         NSDictionary *dataDic = dic[@"data"];
         NSArray *banner_group = dataDic[@"banner_group"];
-        
         // 把得到的数据存放到数组当中
         for (NSDictionary *itemDic in banner_group) {
             CycleModel *Model = [[CycleModel alloc]cyecleModelWithDictionary:itemDic];
@@ -210,7 +212,6 @@
         [self.secModelArray addObject:secModel];
     [self.tableView reloadData];
     }
-
 }
 #pragma mark - SDCycleView Delegate
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index

@@ -19,16 +19,33 @@
                 [self.vertical_image_url addObject:tempDic[@"vertical_image_url"]];
                 [self.cover_image_url addObject:tempDic[@"cover_image_url"]];
                 [self.title addObject:tempDic[@"title"]];
-                self.description1 = tempDic[@"description"];
+                [self.description1 addObject:tempDic[@"description"]];
                 NSLog(@"%@", tempDic[@"id"]);
                 [self.id1 addObject:tempDic[@"id"]];
+                // 把Model添加到数组当中
                 self.user = [[UserModel alloc]initWithDictionary:tempDic[@"user"]];
+                [self.userModelArr addObject:self.user];
             }
         }
     }
     return self;
 }
 #pragma mark -- 数组的懒加载
+- (NSMutableArray *) userModelArr
+{
+    if (!_userModelArr) {
+        self.userModelArr = [NSMutableArray array];
+    }
+    return _userModelArr;
+}
+- (NSMutableArray *) description1
+{
+    if (!_description1) {
+        self.description1 = [NSMutableArray array];
+    }
+    return _description1;
+}
+
 - (NSMutableArray *) cover_image_url
 {
     if (!_cover_image_url) {
@@ -81,6 +98,7 @@
     _title = nil;
     _updated_at = nil;
     _user = nil;
+    _userModelArr = nil;
     [super dealloc];
 }
 @end

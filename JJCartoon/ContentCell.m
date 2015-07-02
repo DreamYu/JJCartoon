@@ -44,8 +44,6 @@
     [self addSubview:self.likeLabel];
     
 }
-
-
 -(void)dealloc
 {
     _dateLabel = nil;

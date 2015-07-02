@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "EGOImageView.h"
 #import "BigModel.h"
+#import "UserModel.h"
 
 @interface ContentViewController : UIViewController<EGOImageViewDelegate>
 
@@ -20,7 +21,6 @@
 @property (nonatomic, retain) UIScrollView *scroView;
 @property (nonatomic, retain) UITableView *introTableView;
 @property (nonatomic, retain) UITableView *contentTableView;
-
 // 接收数据 id
 @property (nonatomic, retain) NSString *id1;
 @property (nonatomic, retain) BigModel *model;
@@ -29,7 +29,10 @@
 @property (nonatomic, retain) NSString *headImageUrl;
 // 返回button
 @property (nonatomic, retain) UIButton *backButton;
-
+// 描述信息
+@property (nonatomic, retain) NSString *descriptionContent;
+// user model
+@property (nonatomic, retain) UserModel *userModel;
 
 
 @end

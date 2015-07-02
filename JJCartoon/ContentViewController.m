@@ -12,8 +12,6 @@
 #import "ContentModel.h"
 
 #define kContentUrl @"http://api.kuaikanmanhua.com/v1/topics/104?sort=0"
-
-
 @interface ContentViewController ()<UITableViewDataSource, UITableViewDelegate, NetworkEngineDelegate>
 
 @property (nonatomic, retain) NSString *urlString;
@@ -42,8 +40,7 @@
 - (void) getDataFromUrl
 {
     // 拼接字符串 %@ 为 id的内容
-    NSString *append = [NSString stringWithFormat:@"%@", self.model.topicsArrModel.id1[self.index]];
-    NSString *urlStr = [NSString stringWithFormat:@"http://api.kuaikanmanhua.com/v1/topics/%@?sort=0", append];
+    NSString *urlStr = [NSString stringWithFormat:@"http://api.kuaikanmanhua.com/v1/topics/%@?sort=0", self.id1];
     NetworkEngine *engine = [NetworkEngine netWorkEngineWithURL:[NSURL URLWithString:urlStr] params:nil delegate:self];
     [engine start];
 
@@ -140,13 +137,24 @@
 - (void)addChildSubview
 {
     UITextView *textView = [[UITextView alloc]initWithFrame:CGRectMake(0, self.scroView.frame.origin.y - 235, self.tableView.frame.size.width, 40)];
-    textView.backgroundColor = [UIColor redColor];
-    
-    textView.text = @"AFDSFHGHDJFNMLKNKKMKLCJKCDLNMKCKJMD";
+  // 传过来的数据导入
+    textView.text = self.descriptionContent;
+    // 可编辑改变成 NO
+    textView.editable = NO;
     [self.introTableView addSubview:textView];
-    
-    
-    
+    // 添加作者及作者头像
+    UIView *authorView = [[UIView alloc]initWithFrame:CGRectMake(0, textView.frame.origin.y + textView.frame.size.height + 10, self.tableView.frame.size.width, 40)];
+    EGOImageView *headImage = [[EGOImageView alloc]initWithFrame:CGRectMake(10, 10, 50, 50)];
+    headImage.imageURL = [NSURL URLWithString:self.userModel.avatar_url];
+    headImage.layer.cornerRadius = 25;
+    headImage.layer.masksToBounds = YES;
+    [authorView addSubview:headImage];
+    [self.introTableView addSubview:authorView];
+    // 添加作者名字
+    UILabel *authorLabel = [[UILabel alloc]initWithFrame:CGRectMake(headImage.frame.origin.x + headImage.frame.size.width + 30, headImage.frame.origin.y+ 10, 70, 30)];
+    authorLabel.text = self.userModel.nickname;
+    [authorView addSubview:authorLabel];
+
 }
 #pragma mark - TableView Delegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -198,19 +206,16 @@
             cell.likeLabel.text = [NSString stringWithFormat:@"%@", model.likes_count[indexPath.row]];
         }
         // 设置时间Label
-    
         NSTimeInterval timeInteral = [model.updated_at[indexPath.row] doubleValue];
         NSDate *date = [NSDate dateWithTimeIntervalSince1970:timeInteral];
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
         [dateFormatter setDateFormat:@"MM-dd"];
         // 设置cell 的日期Label
         cell.dateLabel.text = [dateFormatter stringFromDate:date];
-    
         // cell里的图片
         cell.headImage.placeholderImage = [UIImage imageNamed:@"image6.png"];
         cell.headImage.imageURL =  [NSURL URLWithString:model.cover_image_url[indexPath.row]];
     }
-
     return cell;
 }
 
